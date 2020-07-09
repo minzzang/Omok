@@ -10,4 +10,8 @@ public enum  OmokDol {
         this.value = value;
     }
 
+    public int getValue() {
+        return this.value;
+    }
+
 }
