@@ -1,5 +1,6 @@
 package omok;
 
+import omok.domain.Board;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class OmokApplication {
 
 	public static void main(String[] args) {
+		Game game = new Game();
+		game.start();
 		SpringApplication.run(OmokApplication.class, args);
 	}
 

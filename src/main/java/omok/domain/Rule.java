@@ -1,7 +1,6 @@
 package omok.domain;
 
-public class Rule {
+public interface Rule {
 
-    public void valid(int x, int y) {
-    }
+    boolean valid(int x, int y);
 }

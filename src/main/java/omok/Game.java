@@ -1,5 +1,6 @@
 package omok;
 
+import omok.domain.Board;
 import omok.domain.OmokDol;
 import omok.domain.Player;
 
@@ -7,15 +8,14 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import static omok.domain.Board.board;
-
 public class Game {
 
     private static Boolean GAME_PROGRESS = true;
 
-    public void start() {
+    public Game() {}
 
-        board.getInstance();
+    public void start() {
+        Board board = new Board();
         List<Player> players = Arrays.asList(new Player("minje", OmokDol.BLACK)
                                               , new Player("suhyun", OmokDol.WHITE));
         playOmok(players);
@@ -38,12 +38,6 @@ public class Game {
                 count++;
             }
         }
-    }
-
-    public static void main(String[] args) {
-
-        Game game = new Game();
-        game.start();
     }
 
 }
