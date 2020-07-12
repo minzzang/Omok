@@ -7,8 +7,9 @@ public class Board {
 
     private int[][] map = new int[9][9];
 
-    public void addOmokDol(int x, int y, OmokDol omokDol) {
-        map[x][y] = omokDol.getValue();
+    public void addOmokDol(int x, int y, OmokDol omokDol)
+    {
+        this.map[x][y] = omokDol.getValue();
     }
 
     public void showBoard() {

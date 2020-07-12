@@ -18,11 +18,11 @@ public class Game {
         Board board = new Board();
         List<Player> players = Arrays.asList(new Player("minje", OmokDol.BLACK)
                                               , new Player("suhyun", OmokDol.WHITE));
-        playOmok(players);
+        playOmok(board, players);
         board.showBoard();
     }
 
-    private void playOmok(List<Player> players) {
+    private void playOmok(Board board, List<Player> players) {
 
         int count = 0;
 
@@ -34,7 +34,7 @@ public class Game {
                 int x = sc.nextInt();
                 int y = sc.nextInt();
 
-                player.putOmokDol(x, y);
+                player.putOmokDol(x, y, board);
                 count++;
             }
         }
