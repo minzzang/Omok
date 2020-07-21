@@ -8,7 +8,6 @@ public class Player {
 
     private OmokDol omokDol;
 
-
     public Player(String name, OmokDol omokDol) {
         this.name = name;
         this.omokDol = omokDol;
@@ -25,8 +24,10 @@ public class Player {
         return this.name;
     }
 
-    public boolean putOmokDol(int x, int y, Board board) {
-        board.addOmokDol(x, y, this.omokDol);
-        return true;
+    public void putOmokDol(int x, int y, Board board) {
+
+        if (rule.valid(x, y, board)) {
+            board.addOmokDol(x, y, this.omokDol);
+        }
     }
 }

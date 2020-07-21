@@ -12,17 +12,20 @@ public class Game {
 
     private static Boolean GAME_PROGRESS = true;
 
-    public Game() {}
+    private Board board;
 
-    public void start() {
-        Board board = new Board();
-        List<Player> players = Arrays.asList(new Player("minje", OmokDol.BLACK)
-                                              , new Player("suhyun", OmokDol.WHITE));
-        playOmok(board, players);
-        board.showBoard();
+    public Game() {
+        this.board = new Board();
     }
 
-    private void playOmok(Board board, List<Player> players) {
+    public void start() {
+        List<Player> players = Arrays.asList(new Player("minje", OmokDol.BLACK)
+                                              , new Player("suhyun", OmokDol.WHITE));
+        playOmok(players);
+        this.board.showBoard();
+    }
+
+    private void playOmok(List<Player> players) {
 
         int count = 0;
 
@@ -34,7 +37,7 @@ public class Game {
                 int x = sc.nextInt();
                 int y = sc.nextInt();
 
-                player.putOmokDol(x, y, board);
+                player.putOmokDol(x, y, this.board);
                 count++;
             }
         }
