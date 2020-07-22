@@ -12,7 +12,7 @@ public class Player {
         this.name = name;
         this.omokDol = omokDol;
 
-        if (omokDol.equals(omokDol.BLACK)) {
+        if (this.omokDol.equals(omokDol.BLACK)) {
             this.rule = new RuleForBlackDol();
         }
         else {
@@ -22,6 +22,10 @@ public class Player {
 
     public String getName() {
         return this.name;
+    }
+
+    public Rule getRule() {
+        return this.rule;
     }
 
     public void putOmokDol(int x, int y, Board board) {

@@ -26,4 +26,8 @@ public class Board {
         }
     }
 
+
+    public void checkOmok(int x, int y) {
+
+    }
 }
