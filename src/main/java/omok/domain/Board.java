@@ -26,8 +26,25 @@ public class Board {
         }
     }
 
-
     public void checkOmok(int x, int y) {
 
+        checkHorizontal(x, y);
+        checkVertical(x, y);
+        checkLeftDiagonal(x, y);
+        checkRightDiagonal(x, y);
+
+    }
+
+    private void checkHorizontal(int x, int y) {
+    }
+
+    private void checkVertical(int x, int y) {
+
+    }
+
+    private void checkLeftDiagonal(int x, int y) {
+    }
+
+    private void checkRightDiagonal(int x, int y) {
     }
 }

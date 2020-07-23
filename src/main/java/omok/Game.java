@@ -22,7 +22,7 @@ public class Game {
         List<Player> players = Arrays.asList(new Player("minje", OmokDol.BLACK)
                                               , new Player("suhyun", OmokDol.WHITE));
         playOmok(players);
-        this.board.showBoard();
+        board.showBoard();
     }
 
     private void playOmok(List<Player> players) {
@@ -38,7 +38,7 @@ public class Game {
                 int y = sc.nextInt();
 
                 player.putOmokDol(x, y, this.board);
-                this.board.checkOmok(x, y);
+                board.checkOmok(x, y);
             }
         }
     }
