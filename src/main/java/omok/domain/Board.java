@@ -28,23 +28,24 @@ public class Board {
 
     public void checkOmok(int x, int y) {
 
-        checkHorizontal(x, y);
-        checkVertical(x, y);
-        checkLeftDiagonal(x, y);
-        checkRightDiagonal(x, y);
+        if (checkHorizontal(x, y) || checkVertical(x, y) || checkLeftDiagonal(x, y) || checkRightDiagonal(x, y)) {
 
+        }
     }
 
-    private void checkHorizontal(int x, int y) {
+    private boolean checkHorizontal(int x, int y) {
+        return false;
     }
 
-    private void checkVertical(int x, int y) {
-
+    private boolean checkVertical(int x, int y) {
+        return false;
     }
 
-    private void checkLeftDiagonal(int x, int y) {
+    private boolean checkLeftDiagonal(int x, int y) {
+        return false;
     }
 
-    private void checkRightDiagonal(int x, int y) {
+    private boolean checkRightDiagonal(int x, int y) {
+        return false;
     }
 }
