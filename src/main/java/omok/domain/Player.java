@@ -28,10 +28,16 @@ public class Player {
         return this.rule;
     }
 
-    public void putOmokDol(int x, int y, Board board) {
+    public OmokDol getOmokDol() {
+        return this.omokDol;
+    }
+
+    public boolean putOmokDol(int x, int y, Board board) {
 
         if (rule.valid(x, y, board)) {
             board.addOmokDol(x, y, this.omokDol);
+            return true;
         }
+        return false;
     }
 }

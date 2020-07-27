@@ -27,20 +27,24 @@ public class Game {
 
     private void playOmok(List<Player> players) {
 
-        int count = 0;
+        while (GAME_PROGRESS) {
 
-        while (count < 10) {
             for (Player player : players) {
-                count++;
-                System.out.println(player.getName() + "select");
-                Scanner sc = new Scanner(System.in);
-                int x = sc.nextInt();
-                int y = sc.nextInt();
+                while (true) {
 
-                player.putOmokDol(x, y, this.board);
-                board.checkOmok(x, y);
+                    System.out.println(player.getName() + "select");
+                    Scanner sc = new Scanner(System.in);
+                    int x = sc.nextInt();
+                    int y = sc.nextInt();
+
+                    player.putOmokDol(x, y, this.board);
+                    board.checkOmok(x, y, player.getOmokDol());
+                }
             }
         }
     }
+
+
+
 
 }
