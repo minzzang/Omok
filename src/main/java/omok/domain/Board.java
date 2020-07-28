@@ -38,21 +38,46 @@ public class Board {
 
     private boolean checkHorizontal(int x, int y, OmokDol omokDol) {
 
-        int count = 0;
+        int count = 1;
 
-        for (int i=0; i<SIZE; i++) {
-            if (map[y][i] == omokDol.getValue()) {
-                count++;
-            }
+        for (int i=x-1; i>=0; i--) {
+            if (map[y][i] != omokDol.getValue()) break;
+            count++;
         }
+
+        for (int j=x+1; j<SIZE; j++) {
+            if (map[y][j] != omokDol.getValue()) break;
+            count++;
+        }
+
         return count == 5 ? true : false;
     }
 
-    private boolean checkVertical(int x, int y) {
-        return false;
+
+    private boolean checkVertical(int x, int y, OmokDol omokDol) {
+
+        int count = 1;
+        
+        for (int i=y-1; i>=0; i--) {
+            if (map[i][x] != omokDol.getValue()) break;
+            count++;
+        }
+
+        for (int j=y+1; j<SIZE; j++) {
+            if (map[j][y] != omokDol.getValue()) break;
+            count++;
+        }
+
+        return  count == 5 ? true : false;
     }
 
     private boolean checkLeftDiagonal(int x, int y) {
+
+        int count = 1;
+        
+        for (int i=x-1; i>=0; i--) {
+        }
+
         return false;
     }
 
