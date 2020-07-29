@@ -71,17 +71,51 @@ public class Board {
         return  count == 5 ? true : false;
     }
 
-    private boolean checkLeftDiagonal(int x, int y) {
+    private boolean checkLeftDiagonal(int x, int y, OmokDol omokDol) {
+
+        int count = 1;
+
+        int downX = x, upX = x;
+        int downY = x, upY = y;
+
+        while (downX == 0 || downY == 0) {
+            downX--;
+            downY--;
+            if (map[downY][downX] != omokDol.getValue()) break;
+            count++;
+        }
+
+        while (upX == SIZE || upY == SIZE) {
+            upX++;
+            upY++;
+            if (map[upY][upX] != omokDol.getValue()) break;
+            count++;
+        }
+
+        return count == 5 ? true : false;
+    }
+
+    private boolean checkRightDiagonal(int x, int y, OmokDol omokDol) {
 
         int count = 1;
         
-        for (int i=x-1; i>=0; i--) {
+        int downX = x, upX = x;
+        int downY = x, upY = y;
+
+        while (upX == SIZE || downY == 0) {
+            upX++;
+            downY--;
+            if (map[downY][upX] != omokDol.getValue()) break;
+            count++;
         }
 
-        return false;
-    }
+        while (downX == 0 || upY == SIZE) {
+            downX--;
+            upX++;
+            if (map[upY][downX] != omokDol.getValue()) break;
+            count++;
+        }
 
-    private boolean checkRightDiagonal(int x, int y) {
-        return false;
+        return count == 5 ? true : false;
     }
 }

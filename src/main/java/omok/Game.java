@@ -38,7 +38,12 @@ public class Game {
                     int y = sc.nextInt();
 
                     player.putOmokDol(x, y, this.board);
-                    board.checkOmok(x, y, player.getOmokDol());
+                    if (board.checkOmok(x, y, player.getOmokDol())) {
+
+
+
+                    }
+
                 }
             }
         }
