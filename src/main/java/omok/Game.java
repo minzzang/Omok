@@ -30,7 +30,10 @@ public class Game {
         while (GAME_PROGRESS) {
 
             for (Player player : players) {
-                while (true) {
+
+                boolean isValid = false;
+
+                while (!isValid) {
 
                     System.out.println(player.getName() + "select");
                     Scanner sc = new Scanner(System.in);
@@ -39,9 +42,7 @@ public class Game {
 
                     player.putOmokDol(x, y, this.board);
                     if (board.checkOmok(x, y, player.getOmokDol())) {
-
-
-
+                        return;
                     }
 
                 }

@@ -78,14 +78,14 @@ public class Board {
         int downX = x, upX = x;
         int downY = x, upY = y;
 
-        while (downX == 0 || downY == 0) {
+        while (downX != 0 || downY != 0) {
             downX--;
             downY--;
             if (map[downY][downX] != omokDol.getValue()) break;
             count++;
         }
 
-        while (upX == SIZE || upY == SIZE) {
+        while (upX != SIZE || upY != SIZE) {
             upX++;
             upY++;
             if (map[upY][upX] != omokDol.getValue()) break;
@@ -102,14 +102,14 @@ public class Board {
         int downX = x, upX = x;
         int downY = x, upY = y;
 
-        while (upX == SIZE || downY == 0) {
+        while (upX != SIZE || downY != 0) {
             upX++;
             downY--;
             if (map[downY][upX] != omokDol.getValue()) break;
             count++;
         }
 
-        while (downX == 0 || upY == SIZE) {
+        while (downX != 0 || upY != SIZE) {
             downX--;
             upX++;
             if (map[upY][downX] != omokDol.getValue()) break;
