@@ -28,6 +28,13 @@ public class Board {
         }
     }
 
+    public boolean isPlaced(int x, int y) {
+        if (map[y][x] == 0) {
+            return true;
+        }
+        return false;
+    }
+
     public boolean checkOmok(int x, int y, OmokDol omokDol) {
 
         if (checkHorizontal(x, y, omokDol) || checkVertical(x, y, omokDol) || checkLeftDiagonal(x, y, omokDol) || checkRightDiagonal(x, y, omokDol)) {

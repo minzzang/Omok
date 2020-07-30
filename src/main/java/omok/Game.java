@@ -28,29 +28,35 @@ public class Game {
     private void playOmok(List<Player> players) {
 
         while (GAME_PROGRESS) {
-
-            for (Player player : players) {
-
-                boolean isValid = false;
-
-                while (!isValid) {
-
-                    System.out.println(player.getName() + "select");
-                    Scanner sc = new Scanner(System.in);
-                    int x = sc.nextInt();
-                    int y = sc.nextInt();
-
-                    player.putOmokDol(x, y, this.board);
-                    if (board.checkOmok(x, y, player.getOmokDol())) {
-                        return;
-                    }
-
-                }
-            }
+            switchPlayer(players);
         }
     }
 
+    private void switchPlayer(List<Player> players) {
 
+        for (Player player : players) {
+
+            boolean isValid = false;
+
+            while (!isValid) {
+                board.showBoard();
+                System.out.println(player.getName() + "select");
+                Scanner sc = new Scanner(System.in);
+                int x = sc.nextInt();
+                int y = sc.nextInt();
+
+                if (player.putOmokDol(x, y, this.board)) {
+                    isValid = true;
+                    continue;
+                }
+                if (board.checkOmok(x, y, player.getOmokDol())) {
+                    return;
+                }
+                System.out.println("타면안돼");
+
+            }
+        }
+    }
 
 
 }

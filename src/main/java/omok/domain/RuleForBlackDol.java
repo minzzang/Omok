@@ -4,6 +4,6 @@ public class RuleForBlackDol implements Rule{
 
     @Override
     public boolean valid(int x, int y, Board board) {
-        return true;
+        return !board.isPlaced(x, y);
     }
 }
