@@ -50,10 +50,9 @@ public class Game {
                     continue;
                 }
                 if (board.checkOmok(x, y, player.getOmokDol())) {
+                    GAME_PROGRESS = false;
                     return;
                 }
-                System.out.println("타면안돼");
-
             }
         }
     }
