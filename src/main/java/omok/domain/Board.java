@@ -10,7 +10,7 @@ public class Board {
     private static int SIZE = 9;
 
     public void addOmokDol(int x, int y, OmokDol omokDol) {
-        this.map[x][y] = omokDol.getValue();
+        this.map[y][x] = omokDol.getValue();
     }
 
     public void showBoard() {
@@ -30,9 +30,9 @@ public class Board {
 
     public boolean isPlaced(int x, int y) {
         if (map[y][x] == 0) {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     public boolean checkOmok(int x, int y, OmokDol omokDol) {
@@ -45,7 +45,7 @@ public class Board {
 
     private boolean checkHorizontal(int x, int y, OmokDol omokDol) {
 
-        int count = 1;
+         int count = 1;
 
         for (int i=x-1; i>=0; i--) {
             if (map[y][i] != omokDol.getValue()) break;
@@ -56,7 +56,6 @@ public class Board {
             if (map[y][j] != omokDol.getValue()) break;
             count++;
         }
-
         return count == 5 ? true : false;
     }
 
@@ -74,7 +73,6 @@ public class Board {
             if (map[j][y] != omokDol.getValue()) break;
             count++;
         }
-
         return  count == 5 ? true : false;
     }
 
@@ -98,7 +96,6 @@ public class Board {
             if (map[upY][upX] != omokDol.getValue()) break;
             count++;
         }
-
         return count == 5 ? true : false;
     }
 
@@ -122,7 +119,6 @@ public class Board {
             if (map[upY][downX] != omokDol.getValue()) break;
             count++;
         }
-
         return count == 5 ? true : false;
     }
 }

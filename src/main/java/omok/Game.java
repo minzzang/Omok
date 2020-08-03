@@ -30,29 +30,31 @@ public class Game {
         while (GAME_PROGRESS) {
             switchPlayer(players);
         }
+        System.out.println("게임이 종료 되었습니다.");
     }
 
     private void switchPlayer(List<Player> players) {
 
         for (Player player : players) {
 
-            boolean isValid = false;
+            board.showBoard();
+            System.out.println(player.getName() + "select");
 
-            while (!isValid) {
+            Scanner sc = new Scanner(System.in);
+            int x = sc.nextInt();
+            int y = sc.nextInt();
+
+            while (!player.putOmokDol(x, y, this.board)) {
+
                 board.showBoard();
-                System.out.println(player.getName() + "select");
-                Scanner sc = new Scanner(System.in);
-                int x = sc.nextInt();
-                int y = sc.nextInt();
+                System.out.println("replay.");
+                x = sc.nextInt();
+                y = sc.nextInt();
+            }
 
-                if (player.putOmokDol(x, y, this.board)) {
-                    isValid = true;
-                    continue;
-                }
-                if (board.checkOmok(x, y, player.getOmokDol())) {
-                    GAME_PROGRESS = false;
-                    return;
-                }
+            if (board.checkOmok(x, y, player.getOmokDol())) {
+                GAME_PROGRESS = false;
+                return;
             }
         }
     }
