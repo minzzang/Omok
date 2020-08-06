@@ -47,7 +47,7 @@ public class Game {
             while (!player.putOmokDol(x, y, this.board)) {
 
                 board.showBoard();
-                System.out.println("replay.");
+                System.out.println("다시시작.");
                 x = sc.nextInt();
                 y = sc.nextInt();
             }

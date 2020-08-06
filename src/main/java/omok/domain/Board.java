@@ -20,8 +20,11 @@ public class Board {
                 if (j == 0) {
                     System.out.print(". ");
                 }
+                else if (j == 1){
+                    System.out.print("● ");
+                }
                 else {
-                    System.out.print(j);
+                    System.out.print("○ ");
                 }
             }
             System.out.println("");
