@@ -18,7 +18,7 @@ public class Board {
         for (int[] i : map) {
             for (int j : i) {
                 if (j == 0) {
-                    System.out.print(". ");
+                    System.out.print(".  ");
                 }
                 else if (j == 1){
                     System.out.print("● ");
