@@ -124,4 +124,13 @@ public class Board {
         }
         return count == 5 ? true : false;
     }
+
+    private boolean isSamSam() {
+
+        if (checkHorizontalSam(x, y, omokDol) || checkVerticalSam(x, y, omokDol) || checkLeftDiagonalSam(x, y, omokDol) || checkRightDiagonalSam(x, y, omokDol)) {
+            return true;
+        }
+        return false;
+
+    }
 }
