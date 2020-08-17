@@ -125,12 +125,19 @@ public class Board {
         return count == 5 ? true : false;
     }
 
-    private boolean isSamSam() {
+    private boolean isSamSam(int x, int y, OmokDol omokDol) {
 
         if (checkHorizontalSam(x, y, omokDol) || checkVerticalSam(x, y, omokDol) || checkLeftDiagonalSam(x, y, omokDol) || checkRightDiagonalSam(x, y, omokDol)) {
             return true;
         }
+
         return false;
 
     }
+
+    private boolean checkHorizontalSam(int x, int y, OmokDol omokDol) {
+        return true;
+    }
+
+
 }
